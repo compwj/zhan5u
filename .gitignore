@@ -1,19 +1,12 @@
-/*.exe
+/tags.php
+/index.php
+/robots.txt
 
-/*.config
-
-/*.txt
-
-/*.rar
-/Admin
-
-/Data21293
 /data
+/dede
 
-/inc
-
-/KKKKKKKEditor
-
-/Templates
-/rss
-/Search
+/special
+/include
+/install
+/member
+/plus
