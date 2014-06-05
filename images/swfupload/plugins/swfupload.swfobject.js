@@ -109,3 +109,4 @@ if (typeof(SWFUpload) === "function") {
 		};	
 	}(SWFUpload.prototype.displayDebugInfo);
 }
+

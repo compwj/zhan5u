@@ -768,3 +768,4 @@ $.ui.plugin.add("resizable", "alsoResize", {
 });
 
 })(jQuery);
+

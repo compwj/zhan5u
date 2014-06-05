@@ -560,3 +560,4 @@ $.ui.plugin.add("draggable", "stack", {
 });
 
 })(jQuery);
+
