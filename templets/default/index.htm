@@ -1,272 +1,225 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head>
-<meta http-equiv="Content-Type" content="text/html; charset={dede:global.cfg_soft_lang/}" />
-<title>{dede:global.cfg_webname/}</title>
-<meta name="description" content="{dede:global.cfg_description/}" />
-<meta name="keywords" content="{dede:global.cfg_keywords/}" />
-<link href="{dede:global.cfg_templets_skin/}/style/dedecms.css" rel="stylesheet" media="screen" type="text/css" />
-<script language="javascript" type="text/javascript" src="{dede:global.cfg_cmsurl/}/include/dedeajax2.js"></script>
-<script language="javascript" type="text/javascript" src="{dede:global.cfg_cmspath/}/images/js/j.js" ></script>
-<script language="javascript" type="text/javascript" src="{dede:global.cfg_templets_skin/}/js/pic_scroll.js"></script>
-<script language="javascript" type="text/javascript">
-<!--
-	$(function(){
-		$("a[_for]").mouseover(function(){
-			$(this).parents().children("a[_for]").removeClass("thisclass").parents().children("dd").hide();
-			$(this).addClass("thisclass").blur();
-			$("#"+$(this).attr("_for")).show();
-		});
-		$("a[_for=uc_member]").mouseover();
-		$("a[_for=flink_1]").mouseover();
-	});
-	
-	function CheckLogin(){
-	  var taget_obj = document.getElementById('_userlogin');
-	  myajax = new DedeAjax(taget_obj,false,false,'','','');
-	  myajax.SendGet2("{dede:global.cfg_cmspath/}/member/ajax_loginsta.php");
-	  DedeXHTTP = null;
-	}
--->
-</script>
-</head>
-<body class="index">
-{dede:include filename="head.htm"/}
-<!-- /header -->
-<div class="w960 center clear mt1">
- <div class="pleft">
-  <div class="bignews">
-   <!--å¤´æ¡-->
-   <div class="onenews"> {dede:arclist flag='h' limit='0,1' infolen='230'}
-    <h2><a href="[field:arcurl/]">[field:title/]</a></h2>
-    <p>[field:info/]...<a href="[field:arcurl/]">[æŸ¥çœ‹å…¨æ–‡]</a></p>
-    {/dede:arclist} </div>
-   <!-- /onenews -->
-   <div class="d1"> {dede:arclist flag='h' limit='1,4'}
-    <div class='d1arc'><a href="[field:arcurl/]">[field:title/]</a></div>
-    {/dede:arclist} </div>
-   <!--/å¤´æ¡-->
-   <div class='newarticle'>æœ€æ–°æ–‡ç« </div>
-   <ul class="c2 ico1">
-    <!--æœ€æ–°æ–‡æ¡£-->
-    {dede:arclist row=14 titlelen=32 noflag='h'}
-    <li><a href="[field:arcurl/]">[field:title/]</a></li>
-    {/dede:arclist}
-    <!--//æœ€æ–°æ–‡æ¡£-->
-   </ul>
+{dede:include filename="top.htm"/}<!--t²¿µ÷ÓÃ-->
+<body>
+<link href="/css/tg_index.css" rel="stylesheet" type="text/css" />
+<!--header begin-->
+<div class="headerbg">
+  <div class="header">
+    <div id="logo"><a href="/"><img src="/images/tg_logo.png" width="240" height="60" /></a></div>
+    <div class="nav"><a href="/" class="dqn1" title="Home" hidefocus="true"></a> <a href="/Portfolio" class="n2" title="Portfolio" hidefocus="true"></a> <a href="/services" class="n3" title="Services" hidefocus="true"></a> <a href="/about" class="n4" title="About us" hidefocus="true"></a> <a href="/contact" class="n5" title="Contact us" hidefocus="true"></a> <a href="http://www.fy18.com" target="blank" class="n6" title="Blog" hidefocus="true"></a></div>
   </div>
-  <!-- /bignews -->
-  <div class="flashnews">
-   <!-- size: 280px * 192px -->
-   <script language='javascript'>
-linkarr = new Array();
-picarr = new Array();
-textarr = new Array();
-var swf_width=280;
-var swf_height=192;
-//æ–‡å­—é¢œè‰²|æ–‡å­—ä½ç½®|æ–‡å­—èƒŒæ™¯é¢œè‰²|æ–‡å­—èƒŒæ™¯é€æ˜åº¦|æŒ‰é”®æ–‡å­—é¢œè‰²|æŒ‰é”®é»˜è®¤é¢œè‰²|æŒ‰é”®å½“å‰é¢œè‰²|è‡ªåŠ¨æ’­æ”¾æ—¶é—´|å›¾ç‰‡è¿‡æ¸¡æ•ˆæœ|æ˜¯å¦æ˜¾ç¤ºæŒ‰é’®|æ‰“å¼€æ–¹å¼
-var configtg='0xffffff|0|0x3FA61F|5|0xffffff|0xC5DDBC|0x000033|2|3|1|_blank';
-var files = "";
-var links = "";
-var texts = "";
-//è¿™é‡Œè®¾ç½®è°ƒç”¨æ ‡è®°
-{dede:arclist flag='f' row='5'}
-linkarr[[field:global.autoindex/]] = "[field:arcurl/]";
-picarr[[field:global.autoindex/]]  = "[field:litpic/]";
-textarr[[field:global.autoindex/]] = "[field:title function='html2text(@me)'/]";
+</div>
+<!--header end-->
+<!--flash begin-->
+<div id="flashBg">
+<div id="flashLine">
+<div id="flash">
+<a href="/" target="_blank"  id="flash1" style="display:block;" name="#04304b"><img src="/images/1.jpg" width="980" height="393" /></a>
+<a href="/" target="_blank"  id="flash2"  name="#000000"><img src="/images/2.jpg" width="980" height="393" /></a>
+<a href="/" target="_blank"  id="flash3"  name="#000000"><img src="/images/3.jpg" width="980" height="393" /></a>
+  <div class="flash_bar">
+<div class="dq" id="f1" onClick="changeflash(1)"></div>
+<div class="no" id="f2" onClick="changeflash(2)"></div>
+<div class="no" id="f3" onClick="changeflash(3)"></div>
+  </div>
+</div>
+</div>
+</div>
+<!--flash end-->
+<div class="hotnews"><style>
+#google1{ height:33px; line-height:33px; overflow:hidden;}
+</style>
+<div id="google1">
+<ul id="dhooo1">
+{dede:arclist row=10 titlelen=120 flag ='c' orderby='pubdate' }
+<li><a href="[field:arcurl/]" target="_blank">[field:title/]</a></li>
 {/dede:arclist}
-for(i=1;i<picarr.length;i++){
-if(files=="") files = picarr[i];
-else files += "|"+picarr[i];
-}
-for(i=1;i<linkarr.length;i++){
-if(links=="") links = linkarr[i];
-else links += "|"+linkarr[i];
-}
-for(i=1;i<textarr.length;i++){
-if(texts=="") texts = textarr[i];
-else texts += "|"+textarr[i];
-}
-document.write('<object classid="clsid:d27cdb6e-ae6d-11cf-96b8-444553540000" codebase="http://fpdownload.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=6,0,0,0" width="'+ swf_width +'" height="'+ swf_height +'">');
-document.write('<param name="movie" value="{dede:global.cfg_templeturl /}/default/images/bcastr3.swf"><param name="quality" value="high">');
-document.write('<param name="menu" value="false"><param name=wmode value="opaque">');
-document.write('<param name="FlashVars" value="bcastr_file='+files+'&bcastr_link='+links+'&bcastr_title='+texts+'&bcastr_config='+configtg+'">');
-document.write('<embed src="{dede:global.cfg_templeturl /}/default/images/bcastr3.swf" wmode="opaque" FlashVars="bcastr_file='+files+'&bcastr_link='+links+'&bcastr_title='+texts+'&bcastr_config='+configtg+'&menu="false" quality="high" width="'+ swf_width +'" height="'+ swf_height +'" type="application/x-shockwave-flash" pluginspage="http://www.macromedia.com/go/getflashplayer" />'); document.write('</object>');
-</script>
-  </div>
-  <!-- /flashnews -->
-  <div class="latestnews">
-   <dl class="tbox light">
-    <dt class="light"><strong>ç‰¹åˆ«æ¨è</strong></dt>
-    <dd class="light">
-     <ul class="d2 ico2">
-      {dede:arclist flag='a' row='6' orderby='pubdate'}
-      <li><span>[field:pubdate function="MyDate('m-d',@me)"/]</span><a href="[field:arcurl/]">[field:title/]</a></li>
-      {/dede:arclist}
-     </ul>
-    </dd>
-   </dl>
-  </div>
-  <!-- /latestnews -->
-  <div class="picnews">
-   <dl class="tbox light">
-    <dt class='light'><strong>å›¾æ–‡èµ„è®¯</strong></dt>
-    <dd class='light'>
-     <div class="infiniteCarousel">
-      <div class="wrapper">
-       <ul id='imgscroll'>
-        {dede:arclist row=10 orderby=pubdate type='image.' imgwidth='143' imgheight='106'}
-        <li><a href="[field:arcurl/]">[field:image/]<span class="title">[field:title/]</span></a></li>
-        {/dede:arclist}
-       </ul>
-      </div>
-     </div>
-    </dd>
-   </dl>
-  </div>
-  <div id="leftAD1" style="margin:10px auto">{dede:myad name='indexLeftBanner'/}</div>
-  <!-- /picnews -->
-  <div class="listbox"> {dede:channelartlist}
-   <dl class="tbox">
-    <dt><strong><a href="{dede:field name='typeurl'/}">{dede:field name='typename'/}</a></strong><span class="more"><a href="{dede:field name='typeurl'/}">æ›´å¤š...</a></span></dt>
-    <dd>
-     <ul class="d1 ico3">
-      {dede:arclist titlelen='60' row='8'}
-      <li><span>[field:pubdate function="MyDate('m-d',@me)"/]</span><a href="[field:arcurl /]">[field:title /]</a></li>
-      {/dede:arclist}
-     </ul>
-    </dd>
-   </dl>
-   {/dede:channelartlist} </div>
-  <!-- /listbox -->
- </div>
- <!-- /pleft -->
- <div class="pright">
-  <div class="usercenter">
-   <dl class="tbox light">
-    <dt class='light'> <strong>äº’åŠ¨ä¸­å¿ƒ</strong> <span class="label"> <a href="#" _for="uc_digg">è¸©è¸©</a> <a href="#" _for="uc_comment">è¯„è®º</a> <a href="#" _for="uc_member">ä¼šå‘˜</a> </span> </dt>
-    <dd id="loading"> æ­£åœ¨è½½å…¥,è¯·ç¨å€™... </dd>
-    <dd id="uc_digg">
-     <ul class="f1">
-      {dede:arclist orderby='scores' row='8' subday='30' titlelen='42'}
-      <li> <a href="[field:arcurl/]">[field:title/]</a> <span><small>ç‚¹å‡»:</small>[field:click/]</span> <span><small>è¯„ä»·:</small>[field:scores/]</span></li>
-      {/dede:arclist}
-     </ul>
-    </dd>
-    <!-- /uc_digg -->
-    <dd id="uc_comment">
-     <ul class="f2">
-      {dede:feedback row='5' titlelen='24' infolen='80'}
-      <li> <small><a href="#" class="username">[field:username function="(@me=='guest' ? 'æ¸¸å®¢' : @me)"/]</a> è¯„è®º <a href="[field:global.cfg_phpurl/]/feedback.php?aid=[field:aid/]" class="title">[field:title/]</a></small>
-       <p>[field:msg/]</p>
-      </li>
-      {/dede:feedback}
-     </ul>
-    </dd>
-    <!-- /uc_comment -->
-    <dd id="uc_member" >
-     <div id="_userlogin">
-      <div class="userlogin">
-       <form name="userlogin" action="{dede:global.cfg_memberurl/}/index_do.php" method="POST">
-        <input type="hidden" name="fmdo" value="login" />
-        <input type="hidden" name="dopost" value="login" />
-        <input type="hidden" name="keeptime" value="604800" />
-        <div class="fb"><span>ç”¨æˆ·å:</span>
-         <input type="text" name="userid" size="20" class="ipt-txt" />
-        </div>
-        <div class="fb"><span>å¯†ç :</span>
-         <input type="password" name="pwd" size="20" class="ipt-txt" />
-        </div>
-        {dede:php}
-        if(preg_match("#2#", $safe_gdopen))
-        {
-        echo '
-        <div class="fb"><span>éªŒè¯ç :</span>
-         <input type="text" name="vdcode" size="8" class="ipt-txt" />
-         <img id="vdimgck" align="absmiddle" onClick="this.src=this.src+\'?\'" style="cursor:pointer;margin-left:0px;text-transform:uppercase;" alt="çœ‹ä¸æ¸…ï¼Ÿç‚¹å‡»æ›´æ¢" src="'.$cfg_cmspath.'/include/vdimgck.php"/></div>
-        ';
-        }
-        {/dede:php}
-        <div class="submit">
-         <button type="submit" class="btn-1">ç™»å½•</button>
-         <a href="{dede:global.cfg_memberurl/}/index_do.php?fmdo=user&dopost=regnew" >æ³¨å†Œå¸å·</a> <a href="{dede:global.cfg_memberurl/}/resetpassword.php">å¿˜è®°å¯†ç ?</a> </div>
-       </form>
-      </div>
-     </div>
-     <!-- /userlogin -->
-     <script language="javascript" type="text/javascript">CheckLogin();</script>
-     <div class="latestlogin"> <strong>æœ€è¿‘ç™»é™†çš„ä¼šå‘˜</strong>
-      <ul class="e7">
-       {dede:memberlist row=6 signlen=30}
-       <li><a href="[field:spaceurl/]" target="_blank"><img src="[field:face/]" alt='[field:spacename/]' width="52" height="52" />[field:uname/]</a></li>
-       {/dede:memberlist}
-      </ul>
-     </div>
-     <!-- /latestlogin -->
-    </dd>
-    <!-- /uc_member -->
-   </dl>
-  </div>
-  <!-- /usercenter -->
-  <div id="rightAD1" style="margin:10px auto">{dede:myad name='indexRightLitpic1'/}</div>
-  <div class="commend mt1">
-   <dl class="tbox light">
-    <dt class='light'><strong>æ¨èå†…å®¹</strong></dt>
-    <dd class='light'>
-     <ul class="c1 ico2">
-      {dede:arclist flag='c' titlelen=42 row='16' tagid='dedecms' pagesize='8'}
-      <li class='dotline'><a href="[field:arcurl/]">[field:title/]</a></li>
-      {/dede:arclist}
-     </ul>
-    </dd>
-   </dl>
-  </div>
-  <!-- /commend -->
-  <div id="rightAD1" style="margin:10px auto">{dede:myad name='indexRightLitpic2'/}</div>
-  <div class="hot mt1">
-   <dl class="tbox light">
-    <dt class='light'><strong>æœ¬æœˆçƒ­ç‚¹</strong></dt>
-    <dd class='light'>
-     <ul class="c1 ico2">
-      {dede:arclist sort='hot' subday='30' titlelen=42 row=6}
-      <li class='dotline'><a href="[field:arcurl/]">[field:title/]</a></li>
-      {/dede:arclist}
-     </ul>
-    </dd>
-   </dl>
-  </div>
-  <div class="vote mt1">
-   <dl class="tbox light">
-    <dt class='light'><strong>æŠ•ç¥¨è°ƒæŸ¥</strong></dt>
-    <script language="javascript" src="{dede:global.cfg_cmsurl/}/data/vote/vote_1.js"></script>
-   </dl>
-  </div>
-  <!-- /vote -->
-  <div style="margin:10 auto">{dede:myad name='indexRtpicAd3'/}</div>
- </div>
- <!-- /pleft -->
+</ul>
 </div>
-<div class="flink w960 center clear">
- <dl class="tbox">
-  <dt> <strong>å‹æƒ…é“¾æ¥</strong>
-	<span class="linklabel">
-		{dede:flinktype type="dedecms"}
-			<a href="#" _for="flink_[field:id/]">[field:typename/]</a> 
-		{/dede:flinktype}
-	</span>
-	<span class="more"> <a href="plus/flink.php">æ‰€æœ‰é“¾æ¥</a> | <a href="plus/flink_add.php">ç”³è¯·åŠ å…¥</a> </span> </dt>
-  {dede:flinktype type="dedecms"}
-  <dd id="flink_[field:id/]">
-    <ul class="f5">
-		{dede:flink/}
+<script type="text/javascript">
+<!--
+var Marquee=function(A,B,C,D,E,F){
+	var $=function (id){return document.getElementById(id)},Y=+!!F;
+	(A=$(A)).appendChild((B=$(B)).cloneNode(true));
+	(function (){
+		var m=A.scrollTop%C?(E||0):D;
+		A.scrollTop=[0,B.offsetHeight][Y]==A.scrollTop?[B.offsetHeight-1,1][Y]:(A.scrollTop+[-1,1][Y]);
+		setTimeout(arguments.callee,m);
+	})()
+	return arguments.callee;
+}
+Marquee('google1','dhooo1',33,8000,30,1);
+-->
+</script> </div>
+<!--About begin-->
+<div class="index_about">
+  <div class="about_team">
+    <div class="team"><a href="/about" class="team" title="ÎÒÃÇµÄÍÅ¶Ó"></a></div>
+    <p>·çÔÆE°É ×¨ÒµÌá¹©ÍøÕ¾½¨Éè DEDECMSÍøÕ¾Ä£°æ·ÂÖÆ ¿Í·şQQ£º498492522 ×¨ÒµµÄ½»»¥Éè¼Æ¡¢´´ĞÂÀíÄî¡¢ÊÓ¾õ³ÊÏÖ¡£¶¦Á¦Îª¹úÄÚÍâÆóÒµÌá¹©È«·½Î»¶àÆ½Ì¨µÄÉè¼Æ½â¾ö·½°¸¡£</p>
+  </div>
+  <div class="about_ser">
+    <div class="ser"><a href="/services" class="ser" title="ÎÒÃÇµÄ·şÎñ"></a></div>
+    <ul>
+      <li>&nbsp;ÆóÒµ±êÖ¾¡¢ÆóÒµVIÊ¶±ğÏµÍ³Éè¼Æ</li>
+      <li>&nbsp;ÍøÒ³Éè¼Æ¼°ÍøÕ¾È«Õ¾½¨Éè½â¾ö·½°¸</li>
+      <li>&nbsp;Ö÷Á÷³ÌĞò²å¼ş¼°¶ş´Î¿ª·¢</li>
+      <li>&nbsp;Æ½Ãæ¼°Ó¡Ë¢Æ·Éè¼Æ</li>
     </ul>
-  </dd>
-  {/dede:flinktype}
- </dl>
+  </div>
+  <div class="about_order">
+    <div class="order"><a href="/contact" class="order" title="ÏîÄ¿ºÏ×÷"></a></div>
+    <p>¿ìËÙºÍ T-PD studio(·çÔÆE°É¹¤×÷ÊÒ)  Éè¼Æ¹¤×÷ÊÒ½¨Á¢ºÏ×÷ÒâÏò£¬×¨ÒµµÄÍÅ¶Ó»áÎªÄúµÄÆ·ÅÆ×¢ÈëĞÂµÄ»îÁ¦£¬ÎªÆóÒµ´´ÔìÓÅÖÊµÄ·şÎñºÍÍêÃÀµÄ½â¾ö·½°¸¡£</p>
+  </div>
+  <!--item begin-->
+  <div id="tg_item">
+    <div id="item1" class="item">
+      <div class="item1" name="divClick"></div>
+      <div id="tit_fc1"></div>
+      <img src="/images/tg_item1.jpg" width="236" height="132" /> </div>
+    <div id="item2" class="item">
+      <div class="item2" name="divClick"></div>
+      <div id="tit_fc2"></div>
+      <img src="/images/tg_item2.jpg" width="236" height="132" /> </div>
+    <div id="item3" class="item">
+      <div class="item3" name="divClick"></div>
+      <div id="tit_fc3"></div>
+      <img src="/images/tg_item3.jpg" width="236" height="132" /> </div>
+    <div id="item4" class="item">
+      <div class="item4" name="divClick"></div>
+      <div id="tit_fc4"></div>
+      <img src="/images/tg_item4.jpg" width="236" height="132" /> </div>
+  </div>
+  <div class="PopBox" id="Pop1" name="PopBox">
+    <div class="pop1"><a href="javascript:void(0)" class="close" onClick="ClosePop(1)" title="¹Ø±Õ"><img src="/images/null.gif" width="34" height="34" /></a></div>
+    <div class="pop_bg">ÎÒÃÇµÄ¸ß¼¶ÓÃ»§ÌåÑéÊ¦»á²ÎÓë²úÆ·Õû¸öÉè¼ÆÖÜÆÚ£¬ÎªÄúµÄÍøÕ¾´Ó²úÆ·´´ĞÂ£¬½çÃæÊÓ¾õÒıµ¼£¬Ô­ĞÍÉè¼Æ£¬Óë¿ª·¢Ò»ÆğÍÆ¶¯Éè¼ÆÊµÏÖ¡£½«²úÆ·¼°ÄúµÄ¹¹ÏëÉè¼Æ³ö¿ÉÊÓ»¯µÄÊÓ¾õÔªËØ£¬±ÈÈçFlash,icon,±ß¿ò£¬ÓÃ»§¿Ø¼ş£¬´°¿Ú¹æ·¶£¬Í¼ĞÎ»¯µÄ²¼¾ÖµÈ¡£Í¬Éè¼ÆÍÅ¶Ó·¢Õ¹ÖØÒª¸½¼ÓÖµµÄ¸ÅÄî£¬ĞŞ¶©²úÆ·£¬ÍêÉÆ²úÆ·Ô­ĞÍ¡£´Ó¶ø¶ÔÓĞĞ§ÌáÉı²úÆ·µÄ¿ÉĞĞĞÔ£¬½»»¥Á÷³ÌµÄºÏÀíĞÔ£¬ÓÃ»§µÄÒ×ÓÃĞÔ¡£</div>
+  </div>
+  <div class="PopBox" id="Pop2" name="PopBox">
+    <div class="pop2"><a href="javascript:void(0)" class="close" onClick="ClosePop(2)">&nbsp;</a></div>
+    <div class="pop_bg">·çÔÆE°ÉÉè¼Æ¹¤×÷ÊÒ´Ó´´°ìÒÔÀ´Ê¼ÖÕÒÔ³öÖÚµÄÊÓ¾õÒÕÊõÉè¼ÆºÍÓ¦ÓÃ±íÏÖÄÜÁ¦Ó°Ïì×ÅÎÒÃÇµÄÃ¿Ò»¸ö¿Í»§¼°Ã¿Ò»¸öÊ¹ÓÃÕß¡£Ã¿¸ö×÷Æ·¶¼ÄÜ´ø¸ø¹ÛÖÚÕæÕıÒâÒåÉÏµÄÊÓ¾õÏíÊÜ¡£ÔÚ´«´ïÆ·ÅÆÀíÄîµÄÍ¬Ê±Ê¼ÖÕÄÜÒÔÓÃ»§ÌåÑéÎªºËĞÄ½øĞĞ´´ĞÂÉè¼Æ£¬Âú×ãÄúµÄÈÎºÎ´´ĞÂĞèÇó¡£ÎÒÃÇÓµÓĞÒµ½ç×î¶¥¼âµÄÊÓ¾õÉè¼ÆÊ¦£¬×î×¨ÒµµÄÉè¼ÆÍÅ¶ÓºÍÉè¼ÆÁ÷³Ì¹æ·¶»áÎªÄúµÄÆóÒµÌáÉıÆ·ÖÊ¡¢Ìá¸ß¼ÛÖµ¡£</div>
+  </div>
+  <div class="PopBox" id="Pop3" name="PopBox">
+    <div class="pop3"><a href="javascript:void(0)" class="close" onClick="ClosePop(3)">&nbsp;</a></div>
+    <div class="pop_bg">ÎÒÃÇµÄWebÇ°¶Ë¿ª·¢ÍÅ¶ÓÓÉ¹úÄÚÖªÃûÃÅ»§×ÊÉîWebÇ°¶Ë¿ª·¢¹¤³ÌÊ¦×é³É¡£ÎªÉÏÓÎÊÓ¾õÉè¼ÆÊ¦ºÍÏÂÓÎÏµÍ³¹¤³ÌÊ¦Ë³³©¹µÍ¨¼ÜÆğÇÅÁº¡£ÔÚÈ·±£Ç°¶Ë´úÂë×éÖ¯ÓĞĞòÏÂ½«½á¹¹Óë±íÏÖ(Xhtml+CSS)Ïà·ÖÀë£¬Ìá¸ß´úÂë¿ÉÎ¬»¤ĞÔºÍ×é¼şÒ×ÓÃĞÔ¡£Ò³ÃæĞ¡¡¢ËÙ¶È¿ì¡¢²¢ÇÒ¼æÈİFF¡¢chrome¡¢Opera¡¢Safari¡¢IE6ÖÁIE9µÈÖ÷Á÷ä¯ÀÀÆ÷¡£Í¬Ê±ÎªÆ·ÅÆÍøÕ¾¹©ÓÅĞãµÄSEO·şÎñºÍ¹ËÎÊ×ÉÑ¯¡£Ìá¹©ÉúÌ¬Ê½µÄ×ÔÎÒÓªÏú½â¾ö·½°¸£¬ÈÃÍøÕ¾ÔÚĞĞÒµÄÚÕ¼¾İÁìÏÈµØÎ»£¬´Ó¶ø»ñµÃÆ·ÅÆÊÕÒæ¡£</div>
+  </div>
+  <div class="PopBox" id="Pop4" name="PopBox">
+    <div class="pop4"><a href="javascript:void(0)" class="close" onClick="ClosePop(4)">&nbsp;</a></div>
+    <div class="pop_bg">·çÔÆE°É ÑĞ·¢ÍÅ¶ÓÊÇÒ»Ö§×¨Òµ¡¢ÄêÇáµÄ¶ÓÎé£¬Ã¿¸ö³ÉÔ±¶¼ÓĞ×Å¶à¿î³É¹¦²úÆ·µÄ¿ª·¢¾­Ñé£¬¿ÉÒÔÂú×ã¿Í»§µÄ¸÷ÖÖĞèÇó¡£ÕæÕıÎªÄúµÄÆóÒµÖıÔì¼áÊµµÄºó¶Ü¡£</div>
+  </div>
+  <!--item end-->
 </div>
-<!-- /flink -->
-<div id="footAD" style="margin:10px auto; width:726px">{dede:myad name='indexfooterAD'/}</div>
-{dede:include filename="footer.htm"/}
-<!-- /footer -->
+<!--About end-->
+<!--out clients begin-->
+<div id="clients">
+  <div class="L"></div>
+  <div class="R"></div>
+  <div class="Con">
+    <ul>
+      <li><img src="/images/clients_1.gif" width="110" height="50" onMouseOver="ChangeImg(1)" onMouseOut="ResetImg(1)" id="img1" /></li>
+      <li><img src="/images/clients_2.gif" width="120" height="50" onMouseOver="ChangeImg(2)" onMouseOut="ResetImg(2)" id="img2"/></li>
+      <li><img src="/images/clients_3.gif" width="125" height="50" onMouseOver="ChangeImg(3)" onMouseOut="ResetImg(3)" id="img3"/></li>
+      <li><img src="/images/clients_4.gif" width="115" height="50" onMouseOver="ChangeImg(4)" onMouseOut="ResetImg(4)" id="img4"/></li>
+      <li><img src="/images/clients_5.gif" width="120" height="50" onMouseOver="ChangeImg(5)" onMouseOut="ResetImg(5)" id="img5"/></li>
+      <li><img src="/images/clients_6.gif" width="95" height="50" onMouseOver="ChangeImg(6)" onMouseOut="ResetImg(6)" id="img6"/></li>
+    </ul>
+  </div>
+</div>
+<!--out clients end-->
+<!--footer begin-->
+{dede:include filename="footer.htm"/}<!--Î²²¿µ÷ÓÃ-->
+<!--footer end-->
+<script src="/js/jquery-1.4.2.min.js"></script>
+<script>
+$(document).ready(function(){
+$(".item1").hover(function(){$("#tit_fc1").slideDown("normal");	}, function() {$("#tit_fc1").slideUp("fast");});
+$(".item2").hover(function(){$("#tit_fc2").slideDown("normal");	}, function() {$("#tit_fc2").slideUp("fast");});
+$(".item3").hover(function(){$("#tit_fc3").slideDown("normal");	}, function() {$("#tit_fc3").slideUp("fast");});
+$(".item4").hover(function(){$("#tit_fc4").slideDown("normal");	}, function() {$("#tit_fc4").slideUp("fast");});
+});
+
+var currentindex=1;
+$("#flashBg").css("background-color",$("#flash1").attr("name"));
+function changeflash(i) {
+currentindex=i;
+for (j=1;j<=3;j++){
+	if (j==i)
+	{$("#flash"+j).fadeIn("normal");
+	$("#flash"+j).css("display","block");
+	$("#f"+j).removeClass();
+	$("#f"+j).addClass("dq");
+	$("#flashBg").css("background-color",$("#flash"+j).attr("name"));
+	}
+	else
+	{$("#flash"+j).css("display","none");
+	$("#f"+j).removeClass();
+	$("#f"+j).addClass("no");}
+}}
+function startAm(){
+timerID = setInterval("timer_tick()",10000);
+}
+function stopAm(){
+clearInterval(timerID);
+}
+function timer_tick() {
+    currentindex=currentindex>=3?1:currentindex+1;
+	changeflash(currentindex);}
+$(document).ready(function(){
+$(".flash_bar div").mouseover(function(){stopAm();}).mouseout(function(){startAm();});
+startAm();
+});
+
+function ChangeImg(i){
+	$("#img"+i).removeAttr("src");
+	$("#img"+i).attr("src","/images/clients_"+i+"a.gif");
+	}
+function ResetImg(i){
+	$("#img"+i).removeAttr("src");
+	$("#img"+i).attr("src","/images/clients_"+i+".gif");
+	}
+//----Popfc
+
+function ClosePop(i){
+	$("#Pop"+i).fadeOut("normal")}
+
+$(function() {
+            $("div[name='divClick']").click(function() {
+				if ($(this).attr('class')=='item1')
+				{
+                var showDiv = $("#Pop1");   //µÃµ½²ã¶ÔÏó
+				}
+				if ($(this).attr('class')=='item2')
+				{
+                var showDiv = $("#Pop2");   //µÃµ½²ã¶ÔÏó
+				}
+				if ($(this).attr('class')=='item3')
+				{
+                var showDiv = $("#Pop3");   //µÃµ½²ã¶ÔÏó
+				}
+				if ($(this).attr('class')=='item4')
+				{
+                var showDiv = $("#Pop4");   //µÃµ½²ã¶ÔÏó
+				}
+                var divName = showDiv.attr('name');   //µÃµ½Õâ¸ö²ãµÄname
+                if (showDiv.is(":hidden")) {     //ÅĞ¶Ï²ãÊÇ·ñÒş²Ø
+                    $("div[name='" + divName + "']").hide("normal");
+                    showDiv.fadeIn("normal");              //true£ºÏÔÊ¾
+                    $('body').one('click', function() {    //¸øBODY°ó¶¨Ò»´ÎĞÔµã»÷ÊÂ¼ş
+                        showDiv.fadeOut("normal");                    //µã»÷BODYÏÔÊ¾²ã
+                    });
+                    return false;                           //·µ»Ø
+                }
+                else {
+                    showDiv.hide();                   //false:ÏÔÊ¾²ã
+                    $('body').one('click', function() {    //¸øBODY°ó¶¨Ò»´ÎĞÔµã»÷ÊÂ¼ş
+                        showDiv.fadeOut("normal");                    //µã»÷BODYÏÔÊ¾²ã
+                    });
+                    return false;                           //·µ»Ø
+                }
+            });
+
+            $("div[name='PopBox']").click(function() {     //µã»÷ÏÔÊ¾²¿·Ö²»Òş²Ø
+                return false;
+            });
+        });
+
+</script>
 </body>
 </html>
