@@ -27,14 +27,14 @@ function send() {
 	}
 	$("#submitlink").attr("class","submiting");
 	$.post("/e/enews/index.php",{name:$("#name").val(),email:$("#email").val(),title:$("#title").val(),saytext:$("#saytext").val(),enews:'AddFeedback',status:0,bid:1},function(data){//alert(data);
-		if(data.indexOf("ĞÅÏ¢·´À¡³É¹¦") > 0) {
+		if(data.indexOf("ä¿¡æ¯åé¦ˆæˆåŠŸ") > 0) {
 			$("#name").val('');
 			$("#email").val('');
 			$("#title").val('');
 			$("#saytext").val('');
 			$("#submitlink").attr("class","submitok");
 		} else {
-			alert("·¢ËÍÊ§°Ü£¡");
+			alert("å‘é€å¤±è´¥ï¼");
 			$("#submitlink").attr("class","submit");
 		}
 	});
@@ -55,7 +55,7 @@ function send() {
 <div class="contact_area1">
   <div class="fl"><img src="/images/contact_1.jpg" width="520" height="300" /></div>
   <div class="contact_talk">
-    <div id="IM_bar"><a href="tencent://message/?uin=498492522&Site=·çÔÆE°É&Menu=yes" class="qq" title="QQ" target="_blank"></a><a href="msnim:chat?contact=498492522@sina.com" class="msn" title="MSN" target="_blank"></a><a href="#" class="skype" title="Skype" target="_blank"></a></div>
+    <div id="IM_bar"><a href="tencent://message/?uin=498492522&Site=é£äº‘Eå§&Menu=yes" class="qq" title="QQ" target="_blank"></a><a href="msnim:chat?contact=498492522@sina.com" class="msn" title="MSN" target="_blank"></a><a href="#" class="skype" title="Skype" target="_blank"></a></div>
   </div>
 </div>
 <div class="form_area">
@@ -64,22 +64,22 @@ function send() {
   <div class="form_L">
     <div class="tit"><img src="/images/contact_tggzs.jpg" width="247" height="32" /></div>
     <ul class="list">
-      <li><span>Web:</span>www.fy18.com (½¨Õ¾·ÂÕ¾)</li>
-      <li><span>Mobile:</span>400-8888-9999(¿ªÍ¨ÖĞ)</li>
+      <li><span>Web:</span>www.fy18.com (å»ºç«™ä»¿ç«™)</li>
+      <li><span>Mobile:</span>400-8888-9999(å¼€é€šä¸­)</li>
       <li><span>MSN:</span> #</li>
       <li><span>QQ: </span>498492522</li>
       <li><span>E-mail: </span>498492522@qq.com</li>
-      <li><span>Add: </span> ËÄ´¨Ê¡¹ã°²ÊĞ</li>
+      <li><span>Add: </span> å››å·çœå¹¿å®‰å¸‚</li>
     </ul></div>
 <div class="form_M">
-<span> ĞÕÃû&nbsp;Name</span>
+<span> å§“å&nbsp;Name</span>
     <div class="input"><input name="name" id="name" type="text" value="" /></div>
- <span>ÓÊÏä&nbsp;E-mail&nbsp;(ÇëÌîĞ´ÓĞĞ§ÓÊÏä!)</span>
+ <span>é‚®ç®±&nbsp;E-mail&nbsp;(è¯·å¡«å†™æœ‰æ•ˆé‚®ç®±!)</span>
    <div class="input"> <input name="email" id="email" type="text"  value="" /></div>
-    <span>ÁªÏµµç»°&nbsp;Mobile</span>
+    <span>è”ç³»ç”µè¯&nbsp;Mobile</span>
    <div class="input"> <input name="title" id="title" type="text"  value="" /></div>
 </div>
-  <div class="form_R">ÌîĞ´ĞèÇó&nbsp;Enquiry<br />
+  <div class="form_R">å¡«å†™éœ€æ±‚&nbsp;Enquiry<br />
     <div class="text_bg">
       <textarea name="saytext" id="saytext" cols="" rows="" class="textarea" onFocus="javascript:changesubmit()" ></textarea>
     </div>
@@ -89,7 +89,8 @@ function send() {
 </div>
 <!--contact end-->
 <!--footer begin-->
-{dede:include filename="footer.htm"/}<!--Î²²¿µ÷ÓÃ-->
+{dede:include filename="footer.htm"/}<!--å°¾éƒ¨è°ƒç”¨-->
 </body>
 </html>
+
 

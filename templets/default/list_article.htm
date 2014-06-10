@@ -41,21 +41,21 @@ function Hiddentit(i) {
 <div class="about_bar"></div>
 <div class="portfolio_tit"></div>
 <div class="portfolio_con">
-  <!--È«²¿×÷Æ·²Ëµ¥¿ªÊ¼-->
-  <div class="zp_all" onClick="zpmenu()">È«²¿×÷Æ·</div>
+  <!--å…¨éƒ¨ä½œå“èœå•å¼€å§‹-->
+  <div class="zp_all" onClick="zpmenu()">å…¨éƒ¨ä½œå“</div>
   <div class="zp_menu_box">
     <div class="zp_menu"> 
     {dede:channel type='son'}
      <a href="[field:typelink/]" title="[field:typename/]" onClick="Changmenu([field:global name=autoindex runphp="yes"]@me[/field:global])" id="zpmenu1">[field:typename/]</a> 
- {/dede:channel}<!--À¸Ä¿µÄµ÷ÓÃ£¬ÏÂ¼¶-->
+ {/dede:channel}<!--æ ç›®çš„è°ƒç”¨ï¼Œä¸‹çº§-->
         </div>
     <div class="zp_menuend"></div>
   </div>
-  <!--È«²¿×÷Æ·²Ëµ¥½áÊø-->
+  <!--å…¨éƒ¨ä½œå“èœå•ç»“æŸ-->
   <div class="null10"></div>
-  <!--·ÖÒ³¿ªÊ¼-->
-  <!--·ÖÒ³½áÊø-->
-  <!--×÷Æ·begin-->
+  <!--åˆ†é¡µå¼€å§‹-->
+  <!--åˆ†é¡µç»“æŸ-->
+  <!--ä½œå“begin-->
   <div class="zp_list">
 {dede:list row='9' pagesize='9' titlelen='30'}
    <div class="zp_box"><a href="[field:arcurl/]" class="zp_boxfc" onmouseover="Showtit([field:global name=autoindex runphp="yes"]@me[/field:global])" onmouseout="Hiddentit([field:global name=autoindex runphp="yes"]@me[/field:global])"></a>
@@ -65,21 +65,21 @@ function Hiddentit(i) {
         <img src='[field:litpic/]' alt='[field:title function='html2text(@me)'/]'/></div>
     </div>
 {/dede:list}
-   <!--Í¼Æ¬ÁĞ±íµ÷ÓÃ½áÊø-->
+   <!--å›¾ç‰‡åˆ—è¡¨è°ƒç”¨ç»“æŸ-->
     <div class="cl"></div>
   </div>
-  <!--×÷Æ·end-->
-  <!--·ÖÒ³¿ªÊ¼-->
+  <!--ä½œå“end-->
+  <!--åˆ†é¡µå¼€å§‹-->
  <div class="dede_pages">
 			<ul class="pagelist">
              {dede:pagelist listitem="info,index,end,pre,next,pageno" listsize="5"/}
 			</ul>
-		</div><!-- /pages --> <!--·ÖÒ³±êÇ©-->
-  <!--·ÖÒ³½áÊø-->
+		</div><!-- /pages --> <!--åˆ†é¡µæ ‡ç­¾-->
+  <!--åˆ†é¡µç»“æŸ-->
   <div class="cl"></div>
 </div>
 <!--portfolio end-->
 <!--footer begin-->
-{dede:include filename="footer.htm"/}<!--Î²²¿µ÷ÓÃ-->
+{dede:include filename="footer.htm"/}<!--å°¾éƒ¨è°ƒç”¨-->
 </body>
 </html>
